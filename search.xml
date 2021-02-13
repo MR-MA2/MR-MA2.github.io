@@ -21,6 +21,25 @@
     </entry>
     
     
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="2021/02/13/meihua/"/>
+      <url>2021/02/13/meihua/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59"><a href="#1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59" class="headerlink" title="1.参考这篇文章–https://blog.zykjofficial.top/posts/ea8e8e59/"></a>1.参考这篇文章–<a href="https://blog.zykjofficial.top/posts/ea8e8e59/">https://blog.zykjofficial.top/posts/ea8e8e59/</a></h3><h3 id="2-微调"><a href="#2-微调" class="headerlink" title="2.微调"></a>2.微调</h3><p>在\themes\butterfly\source\css_mode\darkmode.styl里面<br>注释掉这个background-color: alpha($dark-black, .7)实现黑夜模式，顶部图不会有暗影<br>在\themes\butterfly\source\css_layout里面<br>注释掉这个background-color: alpha($dark-black, .5)实现页脚变亮</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微调美化 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
   
   
 </search>
