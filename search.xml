@@ -24,25 +24,6 @@
     
     <entry>
       <title>jquery3.24</title>
-      <link href="2021/04/11/jquery%20-%20%E5%89%AF%E6%9C%AC/"/>
-      <url>2021/04/11/jquery%20-%20%E5%89%AF%E6%9C%AC/</url>
-      
-        <content type="html"><![CDATA[<h1 id="一-jQuery-API"><a href="#一-jQuery-API" class="headerlink" title="一.jQuery API"></a>一.jQuery API</h1><p>jQuery是一个快速，小型且功能丰富的JavaScript库。通过易于使用的API（可在多种浏览器中使用），使HTML文档的遍历和操作，事件处理，动画和Ajax等事情变得更加简单。封装了很多方法的js库。</p><h1 id="一-js的缺点"><a href="#一-js的缺点" class="headerlink" title="一.js的缺点"></a>一.js的缺点</h1><p>1.不能添加多个入口函数（window.onload=function(){}）,如果添加了多个，后面的会把前面的给覆盖。</p><p>2.原生js的api名字都太长难记。var div=document.getElementById(“”);</p><p>3.原生js有时候代码冗余。(两个按钮对三个div操作改变样式，要两个for循环)</p><p>4.原生js中有些属性或者方法，有浏览器兼容问题。（IE8 不支持.style.textcontent不可以，innerHTML可以）</p><p>5.原生js容错率比较低，前面的代码出了问题，后面的代码执行不了。 </p><h1 id="二-jquery"><a href="#二-jquery" class="headerlink" title="二.jquery"></a>二.jquery</h1><h2 id="一-jquery优点"><a href="#一-jquery优点" class="headerlink" title="一.jquery优点"></a>一.jquery优点</h2><p>1.是可以写多个入口函数的。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>2.jQuery的api名字容易记忆。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#btnOne&#x27;</span>)</span><br></pre></td></tr></table></figure><p>3.jQuery代码简洁（隐式迭代）。</p><p>3.1.连选多个div不用for循环.</p><p>3.2.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>123<span class="tag">&lt;<span class="name">span</span>&gt;</span>123<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;div&#x27;</span>).text(<span class="string">&#x27;设置的文本&#x27;</span>)  隐式迭代，把div标签里的所有文本都设置了，子类标签为被覆盖消失</span><br></pre></td></tr></table></figure><p>4.jQuery解决兼容性问题。</p><p>5.容错率高，前面代码出问题，后面能运行。</p><p>6.链式编程，.  .  .</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.css(<span class="string">&#x27;border&#x27;</span>,<span class="string">&#x27;1px solid black&#x27;</span>).height(<span class="string">&#x27;100px&#x27;</span>)</span><br></pre></td></tr></table></figure><p>7.jquery的入口函数（等dom树加载完）比js（等dom树，图片，css，js外链等加载完）的快</p><h2 id="二-是一个函数"><a href="#二-是一个函数" class="headerlink" title="二.$是一个函数"></a>二.$是一个函数</h2><p><strong>引入的jQuery.js是一个自执行函数</strong></p><p>1.参数为匿名函数，$为一个入口函数   window.jQuery=window.$=$;</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>2.参数为一个字符串，$为选择器/创建一个标签</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#one&#x27;</span>)</span><br><span class="line">$(<span class="string">&#x27;&lt;div&gt;haha&lt;/div&gt;&#x27;</span>);</span><br></pre></td></tr></table></figure><p>3.如果参数是一个dom对象，那他就会把dom对象转换成jQuery对象</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div1=<span class="built_in">document</span>.getElementById(<span class="string">&quot;one&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> $div=$(<span class="string">&#x27;div1&#x27;</span>);</span><br></pre></td></tr></table></figure><p>4.判断$是不是函数</p><p>console.log(Object.prototype.toString.call($));</p><p><a href="https://www.bilibili.com/video/BV1pt411H7D6?p=7">https://www.bilibili.com/video/BV1pt411H7D6?p=7</a></p><h2 id="三-dom对象和jQuery对象"><a href="#三-dom对象和jQuery对象" class="headerlink" title="三.dom对象和jQuery对象"></a>三.dom对象和jQuery对象</h2><p>1.dom对象，原生js获取的对象，例如</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div=<span class="built_in">document</span>.getElementById(<span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure><p>2.jQuery对象，例如</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $div=$(<span class="string">&#x27;#one&#x27;</span>);</span><br></pre></td></tr></table></figure><p>3.jQuery对象不是一个数组(而是伪数组和dom对象的一个包装集)，判断：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $div=$(<span class="string">&#x27;#one&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log($div.__proto__===<span class="built_in">Array</span>.prototype) <span class="literal">false</span></span><br></pre></td></tr></table></figure><p>4.总结</p><p>他们互不能调用对方的属性和方法。</p><p>5.转换</p><p>dom对象转换jQuery对象</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div1=<span class="built_in">document</span>.getElementById(<span class="string">&quot;one&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> $div=$(<span class="string">&#x27;div1&#x27;</span>);</span><br></pre></td></tr></table></figure><p>jQuery对象转换dom对象</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $div=$(<span class="string">&#x27;div1&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span><span class="keyword">var</span> div1=$div[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span><span class="keyword">var</span> div2=$div.get(<span class="number">0</span>);</span><br></pre></td></tr></table></figure><h2 id="四-设置和获取样式css需注意"><a href="#四-设置和获取样式css需注意" class="headerlink" title="四.设置和获取样式css需注意"></a>四.设置和获取样式css需注意</h2><p>1.在ie浏览器中，要获取边框的样式值，一定要记得一个准确的边框</p><p>$(‘#div’).css(‘border-top-width’);</p><p>不能</p><p>$(‘#div’).css(‘border’);</p><p>2.获取多个div的样式，只能获取到第一个样式值</p><p>$(‘div’).css(‘width’)</p><p>3.设置多样式可以用对象（设置的样式是行内样式，会添加到标签里）</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#setBtn&#x27;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;#div1&#x27;</span>).css(&#123;</span><br><span class="line">width:<span class="number">300</span>,</span><br><span class="line">                <span class="string">&#x27;height&#x27;</span>:<span class="string">&#x27;300px&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;background-color&#x27;</span>:<span class="string">&#x27;green&#x27;</span>;</span><br><span class="line">               <span class="comment">// backgroundColor:&#x27;red&#x27;;</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h2 id="五-选择器注意"><a href="#五-选择器注意" class="headerlink" title="五.选择器注意"></a>五.选择器注意</h2><h4 id="（一）基本选择器"><a href="#（一）基本选择器" class="headerlink" title="（一）基本选择器"></a>（一）基本选择器</h4><p>1.并集选择器</p><p>$(‘.div,.div1’)…符合其中一个类名执行</p><p>2.交集选择器</p><p>$(‘li.nj’)…符合类名为.nj的li执行</p><h4 id="（二）层次选择器"><a href="#（二）层次选择器" class="headerlink" title="（二）层次选择器"></a>（二）层次选择器</h4><p>1.子代选择器$(‘div&gt;p’)</p><p>$(‘div&gt;p,div&gt;span’)    获取div下的p和span</p><p>2.后代选择器$(‘div p’)</p><h4 id="（三）过滤选择器"><a href="#（三）过滤选择器" class="headerlink" title="（三）过滤选择器"></a>（三）过滤选择器</h4><p>​    $(‘li:odd’).css(‘background’,’blue’)    设置奇数li的样式</p><p>​    $(‘li:even’).css(‘background’,’blue’)    设置偶数li的样式</p><p>​    $(‘li’:eq(0)).css(‘background’,’blue’)   设置索引为0的li的样式</p><h4 id="（四）筛选选择器"><a href="#（四）筛选选择器" class="headerlink" title="（四）筛选选择器"></a>（四）筛选选择器</h4><table><thead><tr><th align="center">名称</th><th align="center">用法</th><th align="center">描述</th></tr></thead><tbody><tr><td align="center">children(selector)</td><td align="center">children(selector)</td><td align="center">相当于$(“ul&gt;li”),子类选择器</td></tr><tr><td align="center">find(selector)</td><td align="center">$(“ul”).find(“li”);</td><td align="center">相当于$(“ul li”),后代选择器</td></tr><tr><td align="center">sibling(selector)</td><td align="center">$(“#first”).siblings(“li”);</td><td align="center">查找兄弟节点，不包括自己本身</td></tr><tr><td align="center">parent()</td><td align="center">$(“#first”).parent();</td><td align="center">查找父亲</td></tr><tr><td align="center">eq(index)</td><td align="center">$(“li”).eq(2);</td><td align="center">相当于$(“li:eq(2)”),index从0开始</td></tr><tr><td align="center">next()</td><td align="center">$(“li”).next()</td><td align="center">找下一个兄弟</td></tr><tr><td align="center">prev()</td><td align="center">$(“li”).prev()</td><td align="center">招上一个兄弟</td></tr></tbody></table><blockquote><p>菜鸟</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> jquery学习 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>jquery3.24</title>
       <link href="2021/04/11/jquery/"/>
       <url>2021/04/11/jquery/</url>
       
@@ -52,82 +33,6 @@
       <categories>
           
           <category> jquery学习 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>微调美化</title>
-      <link href="2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC%20(2)/"/>
-      <url>2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC%20(2)/</url>
-      
-        <content type="html"><![CDATA[<h3 id="1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59"><a href="#1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59" class="headerlink" title="1.参考这篇文章–https://blog.zykjofficial.top/posts/ea8e8e59/"></a>1.参考这篇文章–<a href="https://blog.zykjofficial.top/posts/ea8e8e59/">https://blog.zykjofficial.top/posts/ea8e8e59/</a></h3><h3 id="2-微调"><a href="#2-微调" class="headerlink" title="2.微调"></a>2.微调</h3><p>在\themes\butterfly\source\css_mode\darkmode.styl里面<br>注释掉这个background-color: alpha($dark-black, .7)实现黑夜模式，顶部图不会有暗影<br>在\themes\butterfly\source\css_layout里面<br>注释掉这个background-color: alpha($dark-black, .5)实现页脚变亮</p><h3 id="3-分类磁贴–https-akilar-top-posts-a9131002"><a href="#3-分类磁贴–https-akilar-top-posts-a9131002" class="headerlink" title="3.分类磁贴–https://akilar.top/posts/a9131002/"></a>3.分类磁贴–<a href="https://akilar.top/posts/a9131002/">https://akilar.top/posts/a9131002/</a></h3><h3 id="4-随机banner图–https-akilar-top-posts-ebf20e02"><a href="#4-随机banner图–https-akilar-top-posts-ebf20e02" class="headerlink" title="4.随机banner图–https://akilar.top/posts/ebf20e02/"></a>4.随机banner图–<a href="https://akilar.top/posts/ebf20e02/">https://akilar.top/posts/ebf20e02/</a></h3><h3 id="5-底部github徽标–https-akilar-top-posts-615e2dec-github-E5-BE-BD-E6-A0-87-ghbdage"><a href="#5-底部github徽标–https-akilar-top-posts-615e2dec-github-E5-BE-BD-E6-A0-87-ghbdage" class="headerlink" title="5.底部github徽标–https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage"></a>5.底部github徽标–<a href="https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage">https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage</a></h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> 微调美化 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>微调美化</title>
-      <link href="2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC%20(3)/"/>
-      <url>2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC%20(3)/</url>
-      
-        <content type="html"><![CDATA[<h3 id="1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59"><a href="#1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59" class="headerlink" title="1.参考这篇文章–https://blog.zykjofficial.top/posts/ea8e8e59/"></a>1.参考这篇文章–<a href="https://blog.zykjofficial.top/posts/ea8e8e59/">https://blog.zykjofficial.top/posts/ea8e8e59/</a></h3><h3 id="2-微调"><a href="#2-微调" class="headerlink" title="2.微调"></a>2.微调</h3><p>在\themes\butterfly\source\css_mode\darkmode.styl里面<br>注释掉这个background-color: alpha($dark-black, .7)实现黑夜模式，顶部图不会有暗影<br>在\themes\butterfly\source\css_layout里面<br>注释掉这个background-color: alpha($dark-black, .5)实现页脚变亮</p><h3 id="3-分类磁贴–https-akilar-top-posts-a9131002"><a href="#3-分类磁贴–https-akilar-top-posts-a9131002" class="headerlink" title="3.分类磁贴–https://akilar.top/posts/a9131002/"></a>3.分类磁贴–<a href="https://akilar.top/posts/a9131002/">https://akilar.top/posts/a9131002/</a></h3><h3 id="4-随机banner图–https-akilar-top-posts-ebf20e02"><a href="#4-随机banner图–https-akilar-top-posts-ebf20e02" class="headerlink" title="4.随机banner图–https://akilar.top/posts/ebf20e02/"></a>4.随机banner图–<a href="https://akilar.top/posts/ebf20e02/">https://akilar.top/posts/ebf20e02/</a></h3><h3 id="5-底部github徽标–https-akilar-top-posts-615e2dec-github-E5-BE-BD-E6-A0-87-ghbdage"><a href="#5-底部github徽标–https-akilar-top-posts-615e2dec-github-E5-BE-BD-E6-A0-87-ghbdage" class="headerlink" title="5.底部github徽标–https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage"></a>5.底部github徽标–<a href="https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage">https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage</a></h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> 微调美化 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>微调美化</title>
-      <link href="2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC%20-%20%E5%89%AF%E6%9C%AC/"/>
-      <url>2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC%20-%20%E5%89%AF%E6%9C%AC/</url>
-      
-        <content type="html"><![CDATA[<h3 id="1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59"><a href="#1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59" class="headerlink" title="1.参考这篇文章–https://blog.zykjofficial.top/posts/ea8e8e59/"></a>1.参考这篇文章–<a href="https://blog.zykjofficial.top/posts/ea8e8e59/">https://blog.zykjofficial.top/posts/ea8e8e59/</a></h3><h3 id="2-微调"><a href="#2-微调" class="headerlink" title="2.微调"></a>2.微调</h3><p>在\themes\butterfly\source\css_mode\darkmode.styl里面<br>注释掉这个background-color: alpha($dark-black, .7)实现黑夜模式，顶部图不会有暗影<br>在\themes\butterfly\source\css_layout里面<br>注释掉这个background-color: alpha($dark-black, .5)实现页脚变亮</p><h3 id="3-分类磁贴–https-akilar-top-posts-a9131002"><a href="#3-分类磁贴–https-akilar-top-posts-a9131002" class="headerlink" title="3.分类磁贴–https://akilar.top/posts/a9131002/"></a>3.分类磁贴–<a href="https://akilar.top/posts/a9131002/">https://akilar.top/posts/a9131002/</a></h3><h3 id="4-随机banner图–https-akilar-top-posts-ebf20e02"><a href="#4-随机banner图–https-akilar-top-posts-ebf20e02" class="headerlink" title="4.随机banner图–https://akilar.top/posts/ebf20e02/"></a>4.随机banner图–<a href="https://akilar.top/posts/ebf20e02/">https://akilar.top/posts/ebf20e02/</a></h3><h3 id="5-底部github徽标–https-akilar-top-posts-615e2dec-github-E5-BE-BD-E6-A0-87-ghbdage"><a href="#5-底部github徽标–https-akilar-top-posts-615e2dec-github-E5-BE-BD-E6-A0-87-ghbdage" class="headerlink" title="5.底部github徽标–https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage"></a>5.底部github徽标–<a href="https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage">https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage</a></h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> 微调美化 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>微调美化</title>
-      <link href="2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC/"/>
-      <url>2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC/</url>
-      
-        <content type="html"><![CDATA[<h3 id="1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59"><a href="#1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59" class="headerlink" title="1.参考这篇文章–https://blog.zykjofficial.top/posts/ea8e8e59/"></a>1.参考这篇文章–<a href="https://blog.zykjofficial.top/posts/ea8e8e59/">https://blog.zykjofficial.top/posts/ea8e8e59/</a></h3><h3 id="2-微调"><a href="#2-微调" class="headerlink" title="2.微调"></a>2.微调</h3><p>在\themes\butterfly\source\css_mode\darkmode.styl里面<br>注释掉这个background-color: alpha($dark-black, .7)实现黑夜模式，顶部图不会有暗影<br>在\themes\butterfly\source\css_layout里面<br>注释掉这个background-color: alpha($dark-black, .5)实现页脚变亮</p><h3 id="3-分类磁贴–https-akilar-top-posts-a9131002"><a href="#3-分类磁贴–https-akilar-top-posts-a9131002" class="headerlink" title="3.分类磁贴–https://akilar.top/posts/a9131002/"></a>3.分类磁贴–<a href="https://akilar.top/posts/a9131002/">https://akilar.top/posts/a9131002/</a></h3><h3 id="4-随机banner图–https-akilar-top-posts-ebf20e02"><a href="#4-随机banner图–https-akilar-top-posts-ebf20e02" class="headerlink" title="4.随机banner图–https://akilar.top/posts/ebf20e02/"></a>4.随机banner图–<a href="https://akilar.top/posts/ebf20e02/">https://akilar.top/posts/ebf20e02/</a></h3><h3 id="5-底部github徽标–https-akilar-top-posts-615e2dec-github-E5-BE-BD-E6-A0-87-ghbdage"><a href="#5-底部github徽标–https-akilar-top-posts-615e2dec-github-E5-BE-BD-E6-A0-87-ghbdage" class="headerlink" title="5.底部github徽标–https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage"></a>5.底部github徽标–<a href="https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage">https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage</a></h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> 微调美化 </category>
           
       </categories>
       
