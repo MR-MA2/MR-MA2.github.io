@@ -81,6 +81,25 @@
     
     <entry>
       <title>微调美化</title>
+      <link href="2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC%20(3)/"/>
+      <url>2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC%20(3)/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59"><a href="#1-参考这篇文章–https-blog-zykjofficial-top-posts-ea8e8e59" class="headerlink" title="1.参考这篇文章–https://blog.zykjofficial.top/posts/ea8e8e59/"></a>1.参考这篇文章–<a href="https://blog.zykjofficial.top/posts/ea8e8e59/">https://blog.zykjofficial.top/posts/ea8e8e59/</a></h3><h3 id="2-微调"><a href="#2-微调" class="headerlink" title="2.微调"></a>2.微调</h3><p>在\themes\butterfly\source\css_mode\darkmode.styl里面<br>注释掉这个background-color: alpha($dark-black, .7)实现黑夜模式，顶部图不会有暗影<br>在\themes\butterfly\source\css_layout里面<br>注释掉这个background-color: alpha($dark-black, .5)实现页脚变亮</p><h3 id="3-分类磁贴–https-akilar-top-posts-a9131002"><a href="#3-分类磁贴–https-akilar-top-posts-a9131002" class="headerlink" title="3.分类磁贴–https://akilar.top/posts/a9131002/"></a>3.分类磁贴–<a href="https://akilar.top/posts/a9131002/">https://akilar.top/posts/a9131002/</a></h3><h3 id="4-随机banner图–https-akilar-top-posts-ebf20e02"><a href="#4-随机banner图–https-akilar-top-posts-ebf20e02" class="headerlink" title="4.随机banner图–https://akilar.top/posts/ebf20e02/"></a>4.随机banner图–<a href="https://akilar.top/posts/ebf20e02/">https://akilar.top/posts/ebf20e02/</a></h3><h3 id="5-底部github徽标–https-akilar-top-posts-615e2dec-github-E5-BE-BD-E6-A0-87-ghbdage"><a href="#5-底部github徽标–https-akilar-top-posts-615e2dec-github-E5-BE-BD-E6-A0-87-ghbdage" class="headerlink" title="5.底部github徽标–https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage"></a>5.底部github徽标–<a href="https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage">https://akilar.top/posts/615e2dec/#github%E5%BE%BD%E6%A0%87-ghbdage</a></h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微调美化 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>微调美化</title>
       <link href="2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC%20-%20%E5%89%AF%E6%9C%AC/"/>
       <url>2021/04/11/meihua%20-%20%E5%89%AF%E6%9C%AC%20-%20%E5%89%AF%E6%9C%AC/</url>
       
